@@ -9,11 +9,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Paddle extends Actor
 {
-    int velocity = 5;
-    GreenfootImage image = new GreenfootImage(100,20);
+    //World game = getWorld();
+    //private int gameWidth = game.getWidth();
+    //private int gameHeight = game.getHeight();
+    
+    public static final int PADDLE_WIDTH = 100;
+    private int velocity = 5;
+    private GreenfootImage image;
     
     public Paddle()
     {
+        image = new GreenfootImage(PADDLE_WIDTH,20);
         image.setColor(Color.BLUE);
         image.fill();
         setImage(image);
@@ -36,13 +42,14 @@ public class Paddle extends Actor
     public void movePaddle()
     {
         int x = getX(); int y = getY();
+        int halfWidth = PADDLE_WIDTH / 2;
         
-        if(Greenfoot.isKeyDown("left") && x > 50)
+        if(Greenfoot.isKeyDown("left") && x > halfWidth)
         {
             x -= velocity;
         }
         
-        if(Greenfoot.isKeyDown("right") && x < 550)
+        if(Greenfoot.isKeyDown("right") && x < getWorld().getWidth() -halfWidth)
         {
             x += velocity;
         }        
