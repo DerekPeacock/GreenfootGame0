@@ -25,6 +25,7 @@ public class Paddle extends Actor
         image = new GreenfootImage(WIDTH, HEIGHT);
         image.setColor(Color.BLUE);
         image.fill();
+        
         setImage(image);
     }
     
@@ -59,12 +60,12 @@ public class Paddle extends Actor
             x += velocity;
         }        
         
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("down") && y < game.getHeight() - velocity)
         {
             y += velocity;
         } 
         
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("up") && y > velocity)
         {
             y -= velocity;
         }

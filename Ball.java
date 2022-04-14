@@ -2,7 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Move the ball around the screen using the 
- * inbuilt tutrle graphics
+ * inbuilt tutrle graphics.  Ball has a chosen 
+ * image.
  * 
  * @author Derek Peacock 
  * @version 0
