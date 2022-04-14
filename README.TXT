@@ -10,3 +10,6 @@ VERSION or DATE: 13/04/2022
 HOW TO START THIS PROJECT: Run in Greenfoot
 AUTHORS: Derek Peacock
 USER INSTRUCTIONS:
+
+getWorld() cannot be used in the Paddle constructor,
+has to be used in the act() method
