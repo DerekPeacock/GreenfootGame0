@@ -9,6 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Paddle extends Actor
 {
     int velocity = 5;
+    GreenfootImage image = new GreenfootImage(100,20);
+    
+    public Paddle()
+    {
+        image.setColor(Color.BLUE);
+        image.fill();
+        setImage(image);
+    }
     
     /**
      * Act - do whatever the Paddle wants to do. This method is called whenever
