@@ -9,17 +9,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Paddle extends Actor
 {
-    //World game = getWorld();
-    //private int gameWidth = game.getWidth();
-    //private int gameHeight = game.getHeight();
+    public static final int WIDTH = 100;
+    public static final int HEIGHT = 20;
     
-    public static final int PADDLE_WIDTH = 100;
+    private World game;
     private int velocity = 5;
     private GreenfootImage image;
     
+    /**
+     * Create a blue rectangle using a Greenfoot Image
+     * 
+     */
     public Paddle()
     {
-        image = new GreenfootImage(PADDLE_WIDTH,20);
+        image = new GreenfootImage(WIDTH, HEIGHT);
         image.setColor(Color.BLUE);
         image.fill();
         setImage(image);
@@ -31,25 +34,27 @@ public class Paddle extends Actor
      */
     public void act()
     {
+        game = getWorld();
+
         movePaddle();
     }
     
     /**
      * This method moves the paddle around in four directions
      * using coordinate positions.  Could use turtle graphics 
-     * instead without x,y coordinates
+     * instead without x,y coordinates.
      */
     public void movePaddle()
     {
         int x = getX(); int y = getY();
-        int halfWidth = PADDLE_WIDTH / 2;
+        int halfWidth = WIDTH / 2;
         
         if(Greenfoot.isKeyDown("left") && x > halfWidth)
         {
             x -= velocity;
         }
         
-        if(Greenfoot.isKeyDown("right") && x < getWorld().getWidth() -halfWidth)
+        if(Greenfoot.isKeyDown("right") && x < game.getWidth() -halfWidth)
         {
             x += velocity;
         }        
