@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Paddle here.
+ * Move the paddle in four directions, up, down
+ * left and right with the arrow keys
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Derek Peacock
+ * @version 0
  */
 public class Paddle extends Actor
 {
@@ -27,6 +28,11 @@ public class Paddle extends Actor
         movePaddle();
     }
     
+    /**
+     * This method moves the paddle around in four directions
+     * using coordinate positions.  Could use turtle graphics 
+     * instead without x,y coordinates
+     */
     public void movePaddle()
     {
         int x = getX(); int y = getY();

@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ball here.
+ * Move the ball around the screen using the 
+ * inbuilt tutrle graphics
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Derek Peacock 
+ * @version 0
  */
 public class Ball extends Actor
 {
@@ -18,9 +19,5 @@ public class Ball extends Actor
     {
         move(4);
         turn(3);
-    }
-    
-    public void movePaddle()
-    {
     }
 }

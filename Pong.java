@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * A simple graphics game with a paddle and ball
+ * moving around
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Derek Peacock
+ * @version 0
  */
 public class Pong extends World
 {
@@ -12,8 +13,8 @@ public class Pong extends World
     private Paddle paddle;
     
     /**
-     * Constructor for objects of class Pong
-     * 
+     * Setup the graphics window and add the ball
+     * and the paddle
      */
     public Pong()
     {    
