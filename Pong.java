@@ -23,7 +23,7 @@ public class Pong extends World
         ball = new Ball();
         addObject(ball, 100, 100);
 
-        paddle = new Paddle();
+        paddle = new Paddle(80, 10);
         addObject(paddle, 200, 300);
     }
 }

@@ -9,23 +9,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Paddle extends Actor
 {
-    public static final int WIDTH = 100;
-    public static final int HEIGHT = 20;
+    protected int width;
+    protected int height;
+    protected int speed = 4;
     
-    private World game;
-    private int velocity = 5;
-    private GreenfootImage image;
+    protected GreenfootImage image;
     
     /**
      * Create a blue rectangle using a Greenfoot Image
      * 
      */
-    public Paddle()
+    public Paddle(int width, int height)
     {
-        image = new GreenfootImage(WIDTH, HEIGHT);
-        image.setColor(Color.BLUE);
-        image.fill();
+        this.width = width;
+        this.height = height;
         
+        image = new GreenfootImage(width, height);
+        setColor(Color.GREEN);
         setImage(image);
     }
     
@@ -35,9 +35,7 @@ public class Paddle extends Actor
      */
     public void act()
     {
-        game = getWorld();
-
-        movePaddle();
+        moveWithKeys();
     }
     
     /**
@@ -45,31 +43,42 @@ public class Paddle extends Actor
      * using coordinate positions.  Could use turtle graphics 
      * instead without x,y coordinates.
      */
-    public void movePaddle()
+    public void moveWithKeys()
     {
         int x = getX(); int y = getY();
-        int halfWidth = WIDTH / 2;
+        int halfWidth = width / 2;
         
         if(Greenfoot.isKeyDown("left") && x > halfWidth)
         {
-            x -= velocity;
+            x -= speed;
         }
         
-        if(Greenfoot.isKeyDown("right") && x < game.getWidth() -halfWidth)
+        if(Greenfoot.isKeyDown("right") && !isAtEdge())
         {
-            x += velocity;
+            x += speed;
         }        
         
-        if(Greenfoot.isKeyDown("down") && y < game.getHeight() - velocity)
+        if(Greenfoot.isKeyDown("down") && !isAtEdge())
         {
-            y += velocity;
+            y += speed;
         } 
         
-        if(Greenfoot.isKeyDown("up") && y > velocity)
+        if(Greenfoot.isKeyDown("up") && y > speed)
         {
-            y -= velocity;
+            y -= speed;
         }
         
         setLocation(x, y);
+    }
+    
+    public void setColor(Color color)
+    {
+        image.setColor(color);
+        image.fill();
+    }
+    
+    public void setSpeed(int speed)
+    {
+        this.speed = speed;
     }
 }
