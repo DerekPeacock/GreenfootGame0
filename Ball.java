@@ -10,7 +10,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ball extends Actor
 {
-    private int velocity = 5;
+    private int speed = 5;
+    private int angle = 45;
     
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
@@ -18,7 +19,13 @@ public class Ball extends Actor
      */
     public void act()
     {
-        move(4);
-        turn(3);
+        move(speed);
+        
+        if(isAtEdge()) 
+        {
+            //angle = -angle; 
+            turn(-angle);
+            
+        }
     }
 }

@@ -2,13 +2,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * This is a basic drawable object based on Actor
+ * The Shape can be rectangular or oval.
  * 
  * @author Derek Peacock
  * @version 0
  */
 public class Sprite extends Actor
 {
-   
+    protected Shapes shape;
+    protected int width;
+    protected int height;
+    
+    protected int speed = 4;
+    
+    protected GreenfootImage image;
+    
+    public Sprite(Shapes shape, int width, int height)
+    {
+        this.width = width;
+        this.height = height;
+        this.shape = shape;
+        
+        image = new GreenfootImage(width, height);
+
+        setColor(Color.RED);
+        setImage(image);
+    }
+    
     /**
      * Act - do whatever the Sprite wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,4 +37,15 @@ public class Sprite extends Actor
     {
         // Add your action code here.
     }
+    
+    
+    public void setColor(Color color)
+    {
+        image.setColor(color);
+        
+        if(shape == Shapes.Rectangle)
+            image.fill();
+        else
+            image.fillOval(0, 0, width, height);
+    }    
 }

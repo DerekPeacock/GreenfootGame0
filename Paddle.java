@@ -25,7 +25,8 @@ public class Paddle extends Actor
         this.height = height;
         
         image = new GreenfootImage(width, height);
-        setColor(Color.GREEN);
+        image.setColor(Color.GREEN);
+        image.fill();
         setImage(image);
     }
     
@@ -71,11 +72,7 @@ public class Paddle extends Actor
         setLocation(x, y);
     }
     
-    public void setColor(Color color)
-    {
-        image.setColor(color);
-        image.fill();
-    }
+ 
     
     public void setSpeed(int speed)
     {
